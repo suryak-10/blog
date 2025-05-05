@@ -18,5 +18,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::apiResource('/blogs', PostController::class);
     Route::get("my-blogs", [PostController::class, 'myBlogs']);
+    Route::get("category-blogs/{categoryId}", [PostController::class, 'categoryBlogs']);
     Route::apiResource('categories', \App\Http\Controllers\Api\CategoryController::class);
 });
